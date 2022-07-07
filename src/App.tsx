@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Box from '@mui/material/Box';
+import { DataGrid } from '@mui/x-data-grid';
 
-function App() {
+const columns = [
+  { field: 'id', headerName: 'ID', width: 170 },
+  { field: 'name', headerName: 'NAME', width: 170 },
+  { field: 'age', headerName: 'AGE', width: 170 },
+];
+  
+const rows = [
+  { id: 1, name: 'Gourav', age: 12 },
+  { id: 2, name: 'Geek', age: 43 },
+  { id: 3, name: 'Pranav', age: 41 },
+  { id: 4, name: 'Abhay', age: 34 },
+  { id: 5, name: 'Pranav', age: 73 },
+  { id: 6, name: 'Disha', age: 61 },
+  { id: 7, name: 'Raghav', age: 72 },
+  { id: 8, name: 'Amit', age: 24 },
+  { id: 9, name: 'Anuj', age: 48 },
+];
+
+export default function Pagination() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5, 10]}
+        disableSelectionOnClick
+      />
+    </Box>
   );
 }
-
-export default App;
