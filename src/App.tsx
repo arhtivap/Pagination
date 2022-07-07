@@ -19,7 +19,7 @@ const rows = [
   { id: 9, name: 'Anuj', age: 48 },
 ];
 
-export default function Pagination() {
+export default function PaginationDefault() {
   return (
     <Box sx={{ height: 400, width: '100%' }}>
       <DataGrid
